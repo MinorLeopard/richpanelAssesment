@@ -1,13 +1,13 @@
 <?php
 
-require_once '../vendor/autoload.php';
-require_once '../secrets.php';
+require_once 'vendor/autoload.php';
+require_once 'secrets.php';
 
 \Stripe\Stripe::setApiKey($stripeSecretKey);
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://localhost:4242/success.html';
+$YOUR_DOMAIN = 'https://tradeautomation.000webhostapp.com/success.html';
 
 try {
   $checkout_session = \Stripe\Checkout\Session::retrieve($_POST['session_id']);
